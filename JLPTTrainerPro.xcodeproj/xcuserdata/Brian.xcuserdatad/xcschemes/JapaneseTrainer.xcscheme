@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D3CCA39D1CF2ACAC0022D752"
-               BuildableName = "JLPTTrainer.app"
+               BuildableName = "JLPTTrainerPro.app"
                BlueprintName = "JLPTTrainerPro"
                ReferencedContainer = "container:JLPTTrainerPro.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D3CCA39D1CF2ACAC0022D752"
-            BuildableName = "JLPTTrainer.app"
+            BuildableName = "JLPTTrainerPro.app"
             BlueprintName = "JLPTTrainerPro"
             ReferencedContainer = "container:JLPTTrainerPro.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D3CCA39D1CF2ACAC0022D752"
-            BuildableName = "JLPTTrainer.app"
+            BuildableName = "JLPTTrainerPro.app"
             BlueprintName = "JLPTTrainerPro"
             ReferencedContainer = "container:JLPTTrainerPro.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D3CCA39D1CF2ACAC0022D752"
-            BuildableName = "JLPTTrainer.app"
+            BuildableName = "JLPTTrainerPro.app"
             BlueprintName = "JLPTTrainerPro"
             ReferencedContainer = "container:JLPTTrainerPro.xcodeproj">
          </BuildableReference>

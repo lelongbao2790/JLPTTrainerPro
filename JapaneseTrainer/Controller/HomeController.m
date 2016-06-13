@@ -9,11 +9,13 @@
 #import "HomeController.h"
 #import <MessageUI/MessageUI.h>
 
-@interface HomeController ()<MFMailComposeViewControllerDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate>
-
+@interface HomeController ()<MFMailComposeViewControllerDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate, AmbVideoAdDelegate, AmobiBannerDelegate>
+@property (strong, nonatomic) AmobiVideoAd  *videoAd;
+@property (strong, nonatomic) AmobiAdView *adView;
 @end
 
 @implementation HomeController
+@synthesize videoAd;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,6 +48,8 @@
 }
 
 - (IBAction)btnSetting:(id)sender {
+    SettingController *setting = InitStoryBoardWithIdentifier(kSettingControllerStoryBoardID);
+    [self presentViewController:setting animated:YES completion:nil];
 }
 
 - (IBAction)btnRate:(id)sender {
@@ -146,5 +150,49 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+//*****************************************************************************
+#pragma mark -
+#pragma mark - ** Prepare Ads **
+- (void)initVideoAds {
+    self.videoAd = [[AmobiVideoAd alloc] init];
+    [self.videoAd setDelegate:self];
+    [self.videoAd prepare];
+}
+
+- (void)initBannerAds {
+    self.adView =   [[AmobiAdView alloc] initWithBannerSize:SizeFullScreen ];
+    [self.adView setDelegate: self];
+    [self.view addSubview:self.adView];
+}
+
+- (void) onAdAvailable:(AmobiVideoAd*) adView {
+    [videoAd playVideo:self];
+}
+
+#pragma mark Video Ads
+- (void)onAdStarted:(AmobiVideoAd *)adView {
+    
+}
+
+- (void)onAdFinished:(AmobiVideoAd *)adView {
+    
+}
+
+- (void)onPrepareError:(AmobiVideoAd *)adView {
+    
+}
+
+#pragma mark Banner Ads
+- (void)adViewLoadSuccess:(AmobiAdView *)amobiAdView {
+    
+}
+
+- (void)adViewClose:(AmobiAdView *)amobiAdView {
+    [self.adView removeFromSuperview];
+}
+
+- (void)adViewLoadError:(AmobiAdView *)amobiAdView {
+    
+}
 
 @end
