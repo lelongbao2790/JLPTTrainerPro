@@ -31,13 +31,18 @@
 - (id)initWithRootViewController:(UIViewController *)rootViewController {
     self = [super initWithRootViewController:rootViewController];
     if (self) {
-//        [self createHomeBarButton:rootViewController];
     }
     return self;
 }
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-     [self createHomeBarButton:viewController];
+    
+    if ([viewController isKindOfClass:[GrammarController class]] ||
+        [viewController isKindOfClass:[VocabularyController class]] ||
+        [viewController isKindOfClass:[BookmarkController class]] ||
+        [viewController isKindOfClass:[AlphabetController class]]) {
+         [self createHomeBarButton:viewController];
+    }
 }
 
 - (void)createHomeBarButton:(UIViewController *)controller {
