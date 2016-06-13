@@ -1,0 +1,45 @@
+//
+//  JTPrefix.pch
+//  JapaneseTrainer
+//
+//  Created by Bao (Brian) L. LE on 5/23/16.
+//  Copyright © 2016 LongBao. All rights reserved.
+//
+
+#ifndef JTPrefix_pch
+#define JTPrefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "Config.h"
+#import "AlphabetController.h"
+#import "GrammarController.h"
+#import "VocabularyController.h"
+#import "TFHpple.h"
+#import "DetailGrammarController.h"
+#import "Vocabulary.h"
+#import "VocabularCell.h"
+#import "NSString+HTML.h"
+#import <AVFoundation/AVAudioPlayer.h>
+#import <AVFoundation/AVAudioSession.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import "Sound.h"
+#import "WritingCell.h"
+#import "Kanji.h"
+#import "DataAccess.h"
+#import "KanjiController.h"
+#import "ExampleCell.h"
+#import "NoteCell.h"
+#import "MeaningCell.h"
+#import "KanjiCell.h"
+#import "Note.h"
+#import "NoteController.h"
+#import "BookmarkController.h"
+#import "BookMarkCell.h"
+#import "AppDelegate.h"
+#import "TabBarCustomController.h"
+#import "HomeController.h"
+#import "NavigationCustomController.h"
+
+#endif /* JTPrefix_pch */
