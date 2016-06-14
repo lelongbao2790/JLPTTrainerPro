@@ -258,7 +258,6 @@
 		D33731941D0A9E12002AD32D /* imgLeftGrammar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = imgLeftGrammar.png; path = Resource/imgLeftGrammar.png; sourceTree = "<group>"; };
 		D33731971D0AA49D002AD32D /* MoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MoreController.h; path = Controller/MoreController.h; sourceTree = "<group>"; };
 		D33731981D0AA49D002AD32D /* MoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MoreController.m; path = Controller/MoreController.m; sourceTree = "<group>"; };
-		D337319A1D0AB119002AD32D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D337319E1D0E404E002AD32D /* home_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home_icon.png; path = Resource/home_icon.png; sourceTree = "<group>"; };
 		D33731A11D0E4508002AD32D /* NavCustomHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavCustomHomeController.h; path = Controller/NavCustomHomeController.h; sourceTree = "<group>"; };
 		D33731A21D0E4508002AD32D /* NavCustomHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavCustomHomeController.m; path = Controller/NavCustomHomeController.m; sourceTree = "<group>"; };
@@ -691,9 +690,6 @@
 		D3CCA3951CF2ACAC0022D752 = {
 			isa = PBXGroup;
 			children = (
-				D337319A1D0AB119002AD32D /* CoreData.framework */,
-				D3FA256A1CF6EF2500CD24BF /* AudioToolbox.framework */,
-				D3FD92F01CF549AF0039FB14 /* libxml2.2.tbd */,
 				D3CCA3A01CF2ACAC0022D752 /* JapaneseTrainer */,
 				D3CCA3BD1CF2ACAC0022D752 /* JapaneseTrainerTests */,
 				D3CCA3C81CF2ACAC0022D752 /* JapaneseTrainerUITests */,
@@ -714,7 +710,7 @@
 		D3CCA3A01CF2ACAC0022D752 /* JapaneseTrainer */ = {
 			isa = PBXGroup;
 			children = (
-				D3FD92EC1CF5492E0039FB14 /* libxml2.2.dylib */,
+				D3F0D8001D0F96980097AD7D /* Framework */,
 				D3FD92FD1CF54ED90039FB14 /* Utilities */,
 				D3FD92F61CF54C240039FB14 /* Modal */,
 				D3CCA44D1CF2AE470022D752 /* Delegate */,
@@ -939,6 +935,16 @@
 				D3F0D7FE1D0F94FC0097AD7D /* SettingController.m */,
 			);
 			name = Setting;
+			sourceTree = "<group>";
+		};
+		D3F0D8001D0F96980097AD7D /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				D3FD92EC1CF5492E0039FB14 /* libxml2.2.dylib */,
+				D3FA256A1CF6EF2500CD24BF /* AudioToolbox.framework */,
+				D3FD92F01CF549AF0039FB14 /* libxml2.2.tbd */,
+			);
+			name = Framework;
 			sourceTree = "<group>";
 		};
 		D3F665751CF2B24C001A7F71 /* ThirdLibrary */ = {
