@@ -383,7 +383,8 @@
 - (void)handleGrammar {
     self.lbWord.text = self.aGrammar.name;
     self.csHeightTopView.constant = kHeightConstantGrammar;
-    
+    [self.listMeaning removeAllObjects];
+    [self.listExamples removeAllObjects];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
         NSArray *listExampleLocal = [[DataAccess shared] listGrammarRelated:self.aGrammar.name];
         NSArray *listVocaLocal = [[DataAccess shared] listVocabularyRelated:self.aGrammar.name];
@@ -422,7 +423,7 @@
     self.lbWord.text = self.aVocabulary.nameHiragana;
     self.lbKanji.text = [NSString stringWithFormat:@"Kanji: %@",self.aVocabulary.nameKanji];
     self.csHeightTopView.constant = kHeightConstantVocabulary;
-    
+    [self.listMeaning removeAllObjects];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{ // 1
         
         NSArray *listVocaLocal = [[DataAccess shared] listVocabularyRelated:self.aVocabulary.nameHiragana];

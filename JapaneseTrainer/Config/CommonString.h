@@ -102,7 +102,7 @@ static NSString *kEmailAuthor = @"lelongbao2790@gmail.com";
 static NSString *kMessageAlert = @"Do you want to attach screenshot image for feedback.";
 static NSString *kOK = @"YES";
 static NSString *kCancel = @"NO";
-static NSString *kAppID = @"1119056731";
+static NSString *kAppID = @"1123870559";
 #define kItune @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&onlyLatestVersion=true&pageNumber=0&sortOrdering=1&type=Purple+Software"
 #define kItune7 @"itms-apps://itunes.apple.com/app/id%@"
 
