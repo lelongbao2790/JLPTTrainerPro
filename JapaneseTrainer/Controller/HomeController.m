@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.title = kJLPTProTitle;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -36,7 +36,7 @@
 
 - (IBAction)btnFeedback:(id)sender {
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"JLPT Trainer"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:kFeedbackTitle
                                                     message:kMessageAlert
                                                    delegate:self
                                           cancelButtonTitle:kCancel

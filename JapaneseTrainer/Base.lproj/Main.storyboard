@@ -91,7 +91,7 @@
                                             <outlet property="imgArrow" destination="DID-sa-UOw" id="FoL-p9-XiR"/>
                                             <outlet property="lbNameGrammar" destination="NoD-zD-Loz" id="M63-uI-udf"/>
                                             <outlet property="lbNumberCell" destination="vo2-DO-zeZ" id="TRx-lg-yv9"/>
-                                            <outlet property="subView" destination="LTy-Jm-hO0" id="OzG-WD-oOn"/>
+                                            <outlet property="subView" destination="LTy-Jm-hO0" id="CKp-HP-DNf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1255,11 +1255,11 @@
                         <viewControllerLayoutGuide type="bottom" id="5hd-tp-d9d"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2RD-4v-W90">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9l-h4-wAK">
-                                <rect key="frame" x="51" y="261" width="90" height="90"/>
+                                <rect key="frame" x="51" y="197" width="90" height="90"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="2"/>
                                 <state key="normal" image="feedback.png"/>
                                 <connections>
@@ -1267,7 +1267,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kih-js-4nk">
-                                <rect key="frame" x="466" y="105" width="90" height="90"/>
+                                <rect key="frame" x="466" y="41" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="jgg-3s-ljC"/>
                                     <constraint firstAttribute="width" constant="90" id="kEd-DB-SRt"/>
@@ -1279,7 +1279,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyY-qN-r7S">
-                                <rect key="frame" x="51" y="105" width="90" height="90"/>
+                                <rect key="frame" x="51" y="41" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="r3i-aj-vcx"/>
                                     <constraint firstAttribute="height" constant="90" id="xfN-Nn-84R"/>
@@ -1291,7 +1291,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yua-kN-HMe">
-                                <rect key="frame" x="466" y="259" width="90" height="90"/>
+                                <rect key="frame" x="466" y="195" width="90" height="90"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="2" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" image="rate.png"/>
                                 <connections>
@@ -1299,7 +1299,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iuc-OU-5CV">
-                                <rect key="frame" x="45" y="351" width="102" height="25"/>
+                                <rect key="frame" x="45" y="287" width="102" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Gon-Eh-WcH"/>
                                     <constraint firstAttribute="width" constant="102" id="hOa-zN-YkY"/>
@@ -1309,7 +1309,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Setting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBl-do-KB0">
-                                <rect key="frame" x="469" y="197" width="84" height="25"/>
+                                <rect key="frame" x="469" y="133" width="84" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="J5L-36-RRR"/>
                                     <constraint firstAttribute="width" constant="84" id="eR7-cT-oPf"/>
@@ -1319,7 +1319,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate app" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUe-1I-IbJ">
-                                <rect key="frame" x="472" y="351" width="78" height="25"/>
+                                <rect key="frame" x="472" y="287" width="78" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="EfJ-VP-Lel"/>
                                     <constraint firstAttribute="height" constant="25" id="W4i-lm-fsH"/>
@@ -1329,7 +1329,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Learning" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eh-kz-Ykc">
-                                <rect key="frame" x="31" y="197" width="130" height="25"/>
+                                <rect key="frame" x="31" y="133" width="130" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="h3e-iI-q56"/>
                                     <constraint firstAttribute="height" constant="25" id="m9l-4v-zmK"/>
@@ -1496,7 +1496,7 @@
             <objects>
                 <navigationController storyboardIdentifier="NavigationCustomController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vU4-MJ-5FX" customClass="NavigationCustomController" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rke-xT-Adh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Rke-xT-Adh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

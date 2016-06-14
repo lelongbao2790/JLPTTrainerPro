@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbNameGrammar;
 @property (weak, nonatomic) IBOutlet UIImageView *imgArrow;
 @property (weak, nonatomic) IBOutlet UILabel *lbNumberCell;
+@property (weak, nonatomic) IBOutlet UIView *subView;
 
 @end

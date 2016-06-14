@@ -14,10 +14,10 @@
     [super awakeFromNib];
     // Initialization code
     
-    self.layer.cornerRadius = 20;
-    self.layer.masksToBounds = YES;
-    self.layer.borderColor = k11132201Color.CGColor;
-    self.layer.borderWidth = 1.0;
+    self.subView.layer.cornerRadius = 20;
+    self.subView.layer.masksToBounds = YES;
+    self.subView.layer.borderColor = k11132201Color.CGColor;
+    self.subView.layer.borderWidth = 1.0;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
