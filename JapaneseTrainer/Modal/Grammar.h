@@ -16,5 +16,5 @@
 @property (strong, nonatomic) NSString *rawExample;
 @property (strong, nonatomic) NSString *nameGrammarRelated;
 @property (assign, nonatomic) NSInteger isBookmark;
-
+@property (assign, nonatomic) NSInteger isHistory;
 @end

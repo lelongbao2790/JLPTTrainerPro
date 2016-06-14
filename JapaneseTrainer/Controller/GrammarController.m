@@ -119,47 +119,33 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.listGrammar.count;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.listGrammar.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GrammarCell *cell = [tableView dequeueReusableCellWithIdentifier:kIdentifierGrammar forIndexPath:indexPath];
     if(!cell) { cell = [[GrammarCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kIdentifierGrammar];}
-    Grammar *aGrammar = self.listGrammar[indexPath.section];
+    Grammar *aGrammar = self.listGrammar[indexPath.row];
     cell.lbNameGrammar.text = aGrammar.name;
-    cell.lbNumberCell.text = [NSString stringWithFormat:@"%d",(int)indexPath.section + 1];
+    cell.lbNumberCell.text = [NSString stringWithFormat:@"%d",(int)indexPath.row + 1];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     DetailGrammarController *detailGrammar = InitStoryBoardWithIdentifier(kDetailGrammarStoryBoardID);
     detailGrammar.title = [self.btnSegLevel titleForSegmentAtIndex:self.btnSegLevel.selectedSegmentIndex];
-    Grammar *aGrammar = self.listGrammar[indexPath.section];
+    Grammar *aGrammar = self.listGrammar[indexPath.row];
     detailGrammar.aGrammar = aGrammar;
+    aGrammar.isHistory = kValueBookMark1;
+    [aGrammar commit];
     [self.navigationController pushViewController:detailGrammar animated:YES];
     
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 10.; // you can have your own choice, of course
-}
-
-- (void)tableView: (UITableView*)tableView willDisplayCell: (GrammarCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath
-{
-    
-//    if(indexPath.section % 2 == 0) {
-//        cell.backgroundColor = k195232251Color;
-//    }
-//    else {
-//        cell.backgroundColor = [UIColor whiteColor];
-//    }
-    
-}
 
 # pragma mark Get List Grammar
 - (void)getListGrammarAPISuccess:(NSData *)response {

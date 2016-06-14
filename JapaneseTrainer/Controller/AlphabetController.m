@@ -168,6 +168,8 @@
     }
     else {
         kanjiController.word = self.listWriting[indexPath.row];
+        kanjiController.word.isHistory = kValueBookMark1;
+        [kanjiController.word commit];
         [Utilities showDialogController:kanjiController withTag:kTagWritingController];
     }
     

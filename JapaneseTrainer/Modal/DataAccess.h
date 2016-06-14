@@ -31,6 +31,12 @@
 
 - (NSArray *)listBookMarkKanji;
 
+- (NSArray *)listHistoryVocabulary;
+
+- (NSArray *)listHistoryGrammar;
+
+- (NSArray *)listHistoryKanji;
+
 - (NSArray *)listGrammarByLevel:(NSInteger)level;
 
 - (NSArray *)listKanjiByLevel:(NSInteger)level;

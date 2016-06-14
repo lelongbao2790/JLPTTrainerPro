@@ -57,6 +57,7 @@
         return nil;
 }
 
+
 - (NSArray *)listGrammarRelated:(NSString *)nameRelated {
     NSMutableArray *listGrammar = [[NSMutableArray alloc] init];
     DBResultSet* r = [[[Grammar query]
@@ -146,6 +147,57 @@
     NSMutableArray *listKanji = [[NSMutableArray alloc] init];
     DBResultSet* r = [[[Kanji query]
                        whereWithFormat:@"isBookmark = 1"]
+                      fetch];
+    
+    if (r.count > 0) {
+        for (Kanji *voca in r) {
+            [listKanji addObject:voca];
+        }
+        
+        return listKanji;
+    }
+    else
+        return nil;
+}
+
+- (NSArray *)listHistoryVocabulary {
+    NSMutableArray *listVoca = [[NSMutableArray alloc] init];
+    DBResultSet* r = [[[Vocabulary query]
+                       whereWithFormat:@"isHistory = 1"]
+                      fetch];
+    
+    if (r.count > 0) {
+        for (Vocabulary *voca in r) {
+            [listVoca addObject:voca];
+        }
+        
+        return listVoca;
+    }
+    else
+        return nil;
+}
+
+- (NSArray *)listHistoryGrammar {
+    NSMutableArray *listGrammar = [[NSMutableArray alloc] init];
+    DBResultSet* r = [[[Grammar query]
+                       whereWithFormat:@"isHistory = 1"]
+                      fetch];
+    
+    if (r.count > 0) {
+        for (Grammar *voca in r) {
+            [listGrammar addObject:voca];
+        }
+        
+        return listGrammar;
+    }
+    else
+        return nil;
+}
+
+- (NSArray *)listHistoryKanji {
+    NSMutableArray *listKanji = [[NSMutableArray alloc] init];
+    DBResultSet* r = [[[Kanji query]
+                       whereWithFormat:@"isHistory = 1"]
                       fetch];
     
     if (r.count > 0) {

@@ -21,5 +21,5 @@
 @property (strong, nonatomic) NSString *statusWord;
 @property (strong, nonatomic) NSString *nameVocabularyRelated;
 @property (assign, nonatomic) NSInteger isBookmark;
-
+@property (assign, nonatomic) NSInteger isHistory;
 @end

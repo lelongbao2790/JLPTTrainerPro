@@ -1,87 +1,71 @@
 //
-//  BookmarkController.m
+//  HistoryController.m
 //  JLPTTrainer
 //
-//  Created by Bao (Brian) L. LE on 6/8/16.
+//  Created by Bao (Brian) L. LE on 6/13/16.
 //  Copyright © 2016 LongBao. All rights reserved.
 //
 
-#import "BookmarkController.h"
+#import "HistoryController.h"
 
-@interface BookmarkController ()<UITableViewDelegate, UITableViewDataSource, BookMarkCellDelegate>
+@interface HistoryController ()<UITableViewDelegate, UITableViewDataSource, BookMarkCellDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *lbNoBookMark;
-@property (weak, nonatomic) IBOutlet UITableView *tbvBookmark;
-@property (strong, nonatomic) NSMutableArray *listBookMarkGrammar;
-@property (strong, nonatomic) NSMutableArray *listBookMarkKanji;
-@property (strong, nonatomic) NSMutableArray *listBookMarkVocabulary;
+@property (weak, nonatomic) IBOutlet UITableView *tbvHistory;
+@property (strong, nonatomic) NSMutableArray *listHistoryGrammar;
+@property (strong, nonatomic) NSMutableArray *listHistoryKanji;
+@property (strong, nonatomic) NSMutableArray *listHistoryVocabulary;
 @end
 
-@implementation BookmarkController
+@implementation HistoryController
+
+#pragma mark - Life Cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     [self config];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [self reloadView];
 }
 
-- (void)config {
-    [Utilities borderView:self.lbNoBookMark];
-    self.listBookMarkGrammar = [[NSMutableArray alloc] init];
-    self.listBookMarkKanji = [[NSMutableArray alloc] init];
-    self.listBookMarkVocabulary = [[NSMutableArray alloc] init];
-    
-    [Utilities removeBlankFooterTableView:self.tbvBookmark];
-}
-
-- (void)reloadView {
-    self.listBookMarkVocabulary = [[[DataAccess shared] listBookMarkVocabulary] mutableCopy];
-    self.listBookMarkKanji = [[[DataAccess shared] listBookMarkKanji] mutableCopy];
-    self.listBookMarkGrammar = [[[DataAccess shared] listBookMarkGrammar] mutableCopy];
-    [self.tbvBookmark reloadData];
-    
-    [self checkBookMark];
-}
-
-- (void)checkBookMark {
-    if (self.listBookMarkGrammar.count > 0 || self.listBookMarkKanji.count > 0 || self.listBookMarkVocabulary.count > 0) {
-        self.lbNoBookMark.hidden = YES;
-        self.tbvBookmark.hidden = NO;
-    } else if (self.listBookMarkGrammar.count == 0 && self.listBookMarkKanji.count == 0 && self.listBookMarkVocabulary.count == 0) {
-        self.lbNoBookMark.hidden = NO;
-        self.tbvBookmark.hidden = YES;
-    } else {
-        self.lbNoBookMark.hidden = YES;
-        self.tbvBookmark.hidden = NO;
-    }
-}
-
 - (IBAction)btnTrash:(id)sender {
-    
-    for (Kanji *kanji in self.listBookMarkKanji) {
-        kanji.isBookmark = kValueBookMark0;
+    for (Kanji *kanji in self.listHistoryKanji) {
+        kanji.isHistory = kValueBookMark0;
         [kanji commit];
     }
-    for (Vocabulary *voca in self.listBookMarkVocabulary) {
-        voca.isBookmark = kValueBookMark0;
+    for (Vocabulary *voca in self.listHistoryVocabulary) {
+        voca.isHistory = kValueBookMark0;
         [voca commit];
     }
-    for (Grammar *grammar in self.listBookMarkGrammar) {
-        grammar.isBookmark = kValueBookMark0;
+    for (Grammar *grammar in self.listHistoryGrammar) {
+        grammar.isHistory = kValueBookMark0;
         [grammar commit];
     }
     
     [self reloadView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Helper Method
+- (void)config {
+    self.listHistoryGrammar = [[NSMutableArray alloc] init];
+    self.listHistoryKanji = [[NSMutableArray alloc] init];
+    self.listHistoryVocabulary = [[NSMutableArray alloc] init];
+    
+    [Utilities removeBlankFooterTableView:self.tbvHistory];
+}
+
+- (void)reloadView {
+    self.listHistoryVocabulary = [[[DataAccess shared] listHistoryVocabulary] mutableCopy];
+    self.listHistoryKanji = [[[DataAccess shared] listHistoryKanji] mutableCopy];
+    self.listHistoryGrammar = [[[DataAccess shared] listHistoryGrammar] mutableCopy];
+    [self.tbvHistory reloadData];
 }
 
 #pragma mark - Table View Data source
@@ -93,15 +77,15 @@
     
     switch (section) {
         case kSectionVoca:
-            return self.listBookMarkVocabulary.count;
+            return self.listHistoryVocabulary.count;
             break;
-         
+            
         case kSectionKanji:
-            return self.listBookMarkKanji.count;
+            return self.listHistoryKanji.count;
             break;
-        
+            
         case kSectionGrammar:
-            return self.listBookMarkGrammar.count;
+            return self.listHistoryGrammar.count;
             break;
             
         default:
@@ -116,7 +100,7 @@
     
     switch (indexPath.section) {
         case kSectionVoca: {
-            Vocabulary *aVoca = self.listBookMarkVocabulary[indexPath.row];
+            Vocabulary *aVoca = self.listHistoryVocabulary[indexPath.row];
             cell.voca = aVoca;
             cell.kanji = nil;
             cell.grammar = nil;
@@ -125,7 +109,7 @@
             break;
             
         case kSectionKanji: {
-            Kanji *aKanji = self.listBookMarkKanji[indexPath.row];
+            Kanji *aKanji = self.listHistoryKanji[indexPath.row];
             cell.kanji = aKanji;
             cell.voca = nil;
             cell.grammar = nil;
@@ -134,7 +118,7 @@
             break;
             
         case kSectionGrammar: {
-            Grammar *aGrammar = self.listBookMarkGrammar[indexPath.row];
+            Grammar *aGrammar = self.listHistoryGrammar[indexPath.row];
             cell.grammar = aGrammar;
             cell.voca = nil;
             cell.kanji = nil;
@@ -152,7 +136,7 @@
     
     switch (indexPath.section) {
         case kSectionVoca: {
-            Vocabulary *aVoca = self.listBookMarkVocabulary[indexPath.row];
+            Vocabulary *aVoca = self.listHistoryVocabulary[indexPath.row];
             DetailGrammarController *detailGrammar = InitStoryBoardWithIdentifier(kDetailGrammarStoryBoardID);
             detailGrammar.aVocabulary = aVoca;
             [self.navigationController pushViewController:detailGrammar animated:YES];
@@ -160,7 +144,7 @@
             break;
             
         case kSectionKanji: {
-            Kanji *aKanji = self.listBookMarkKanji[indexPath.row];
+            Kanji *aKanji = self.listHistoryKanji[indexPath.row];
             KanjiController *kanjiController = InitStoryBoardWithIdentifier(kKanjiController);
             kanjiController.word = aKanji;
             [Utilities showDialogController:kanjiController withTag:kTagWritingController];
@@ -168,7 +152,7 @@
             break;
             
         case kSectionGrammar: {
-            Grammar *aGrammar = self.listBookMarkGrammar[indexPath.row];
+            Grammar *aGrammar = self.listHistoryGrammar[indexPath.row];
             DetailGrammarController *detailGrammar = InitStoryBoardWithIdentifier(kDetailGrammarStoryBoardID);
             detailGrammar.aGrammar = aGrammar;
             [self.navigationController pushViewController:detailGrammar animated:YES];
@@ -180,7 +164,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
         case kSectionVoca: {
-            if (self.listBookMarkVocabulary.count > 0) {
+            if (self.listHistoryVocabulary.count > 0) {
                 return kVocabularyTitle;
             } else {
                 return kEmpty;
@@ -189,7 +173,7 @@
             break;
             
         case kSectionKanji: {
-            if (self.listBookMarkKanji.count > 0) {
+            if (self.listHistoryKanji.count > 0) {
                 return kKanjiTitle;
             } else {
                 return kEmpty;
@@ -198,7 +182,7 @@
             break;
             
         case kSectionGrammar: {
-            if (self.listBookMarkGrammar.count > 0) {
+            if (self.listHistoryGrammar.count > 0) {
                 return kGrammarTitle;
             } else {
                 return kEmpty;
@@ -214,31 +198,24 @@
 
 #pragma mark - Book Mark Delegate
 - (void)removeBookMarkKanji:(Kanji *)kanji {
-    kanji.isBookmark = kValueBookMark0;
-    [self.listBookMarkKanji removeObject:kanji];
+    kanji.isHistory = kValueBookMark0;
+    [self.listHistoryKanji removeObject:kanji];
     [kanji commit];
-    [Utilities reloadSectionDU:kSectionKanji withRowAnimation:UITableViewRowAnimationNone tableView:self.tbvBookmark];
-    
-     [self checkBookMark];
+    [Utilities reloadSectionDU:kSectionKanji withRowAnimation:UITableViewRowAnimationNone tableView:self.tbvHistory];
+
 }
 
 - (void)removeBookMarkVocabulary:(Vocabulary *)vocabulary {
-    vocabulary.isBookmark = kValueBookMark0;
+    vocabulary.isHistory = kValueBookMark0;
     [vocabulary commit];
-    [self.listBookMarkVocabulary removeObject:vocabulary];
-    
-     [Utilities reloadSectionDU:kSectionVoca withRowAnimation:UITableViewRowAnimationNone tableView:self.tbvBookmark];
-    
-     [self checkBookMark];
+    [self.listHistoryVocabulary removeObject:vocabulary];
+    [Utilities reloadSectionDU:kSectionVoca withRowAnimation:UITableViewRowAnimationNone tableView:self.tbvHistory];
 }
 
 - (void)removeBookMarkGrammar:(Grammar *)grammar {
-    grammar.isBookmark = kValueBookMark0;
-    [self.listBookMarkGrammar removeObject:grammar];
+    grammar.isHistory = kValueBookMark0;
+    [self.listHistoryGrammar removeObject:grammar];
     [grammar commit];
-    [Utilities reloadSectionDU:kSectionGrammar withRowAnimation:UITableViewRowAnimationNone tableView:self.tbvBookmark];
-    
-     [self checkBookMark];
+    [Utilities reloadSectionDU:kSectionGrammar withRowAnimation:UITableViewRowAnimationNone tableView:self.tbvHistory];
 }
-
 @end

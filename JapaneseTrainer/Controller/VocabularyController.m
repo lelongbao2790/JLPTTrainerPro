@@ -181,7 +181,8 @@
         
         wordAtIndex = self.listVocabulary[indexPath.row];
     }
-    
+    wordAtIndex.isHistory = kValueBookMark1;
+    [wordAtIndex commit];
     detailGrammar.aVocabulary = wordAtIndex;
     
     [self.navigationController pushViewController:detailGrammar animated:YES];

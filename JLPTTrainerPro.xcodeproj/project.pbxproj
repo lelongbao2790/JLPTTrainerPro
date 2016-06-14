@@ -181,6 +181,7 @@
 		D3CCA49E1CF2AFB50022D752 /* VocabularyController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CCA49D1CF2AFB50022D752 /* VocabularyController.m */; };
 		D3CCA4AE1CF2AFD10022D752 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CCA4AD1CF2AFD10022D752 /* AppDelegate.m */; };
 		D3F0D7FF1D0F94FC0097AD7D /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F0D7FE1D0F94FC0097AD7D /* SettingController.m */; };
+		D3F0D8041D0F9A1E0097AD7D /* HistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F0D8031D0F9A1E0097AD7D /* HistoryController.m */; };
 		D3F6657B1CF2E2F0001A7F71 /* listcontent.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3F6657A1CF2E2F0001A7F71 /* listcontent.plist */; };
 		D3FA25691CF6EE1300CD24BF /* Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FA25681CF6EE1300CD24BF /* Sound.m */; };
 		D3FA256B1CF6EF2500CD24BF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FA256A1CF6EF2500CD24BF /* AudioToolbox.framework */; };
@@ -459,6 +460,8 @@
 		D3CCA4AD1CF2AFD10022D752 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = AppDelegate/AppDelegate.m; sourceTree = "<group>"; };
 		D3F0D7FD1D0F94FC0097AD7D /* SettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingController.h; sourceTree = "<group>"; };
 		D3F0D7FE1D0F94FC0097AD7D /* SettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingController.m; sourceTree = "<group>"; };
+		D3F0D8021D0F9A1E0097AD7D /* HistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryController.h; sourceTree = "<group>"; };
+		D3F0D8031D0F9A1E0097AD7D /* HistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryController.m; sourceTree = "<group>"; };
 		D3F6657A1CF2E2F0001A7F71 /* listcontent.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = listcontent.plist; path = Resource/listcontent.plist; sourceTree = "<group>"; };
 		D3FA25671CF6EE1300CD24BF /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sound.h; path = Modal/Sound.h; sourceTree = "<group>"; };
 		D3FA25681CF6EE1300CD24BF /* Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sound.m; path = Modal/Sound.m; sourceTree = "<group>"; };
@@ -794,6 +797,7 @@
 		D3CCA3F81CF2ADC80022D752 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D3F0D8011D0F9A0E0097AD7D /* History */,
 				D3F0D7FC1D0F94ED0097AD7D /* Setting */,
 				D33731A01D0E44DB002AD32D /* NavCustomController */,
 				99FAC8801D0D039300628570 /* NavigationControllerCustom */,
@@ -945,6 +949,15 @@
 				D3FD92F01CF549AF0039FB14 /* libxml2.2.tbd */,
 			);
 			name = Framework;
+			sourceTree = "<group>";
+		};
+		D3F0D8011D0F9A0E0097AD7D /* History */ = {
+			isa = PBXGroup;
+			children = (
+				D3F0D8021D0F9A1E0097AD7D /* HistoryController.h */,
+				D3F0D8031D0F9A1E0097AD7D /* HistoryController.m */,
+			);
+			name = History;
 			sourceTree = "<group>";
 		};
 		D3F665751CF2B24C001A7F71 /* ThirdLibrary */ = {
@@ -1338,6 +1351,7 @@
 				D3CCA47D1CF2AF5F0022D752 /* AFSecurityPolicy.m in Sources */,
 				D3B849DB1D07EF4800A2D967 /* BookmarkController.m in Sources */,
 				D3CCA4781CF2AF5F0022D752 /* AFHTTPRequestOperation.m in Sources */,
+				D3F0D8041D0F9A1E0097AD7D /* HistoryController.m in Sources */,
 				D3CCA4851CF2AF5F0022D752 /* UIImageView+AFNetworking.m in Sources */,
 				D3CCA47A1CF2AF5F0022D752 /* AFHTTPSessionManager.m in Sources */,
 				D321D5FB1D068E33002B187D /* KanjiCell.m in Sources */,

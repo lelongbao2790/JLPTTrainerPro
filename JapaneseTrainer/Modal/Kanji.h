@@ -22,5 +22,5 @@
 @property (strong, nonatomic) NSString *example;
 @property (strong, nonatomic) NSString *nameKanjiRelated;
 @property (assign, nonatomic) NSInteger isBookmark;
-
+@property (assign, nonatomic) NSInteger isHistory;
 @end
