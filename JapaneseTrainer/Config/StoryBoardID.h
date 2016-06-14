@@ -33,4 +33,5 @@ static NSString * kBookmarkControllerStoryBoardID = @"BookmarkController";
 static NSString * kTabBarCustomStoryBoardID = @"TabBarCustomController";
 static NSString * kHomeStoryBoardID = @"HomeController";
 static NSString * kNavigationCustomStoryBoardID = @"NavigationCustomController";
+static NSString * kSettingControllerStoryBoardID = @"SettingController";
 #endif /* StoryBoardID_h */

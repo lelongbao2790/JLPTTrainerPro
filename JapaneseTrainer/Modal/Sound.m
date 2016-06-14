@@ -33,6 +33,15 @@
     self = [super init];
     if (self) {
         self.synthesizer = [[AVSpeechSynthesizer alloc] init];
+        if(iOSVersion < 9.0)
+        {
+            self.speedValue = 0;
+            self.utterance.rate = self.speedValue;
+        }
+        else {
+            self.speedValue = 0.42;
+            self.utterance.rate = self.speedValue;
+        }
     }
     
     return self;
@@ -44,13 +53,7 @@
                           speechUtteranceWithString:text];
         self.utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"ja-JP"];
         
-        if(iOSVersion < 9.0)
-        {
-            self.utterance.rate = 0;
-        }
-        else {
-            self.utterance.rate = 0.42;
-        }
+        self.utterance.rate = self.speedValue;
         
         if ([self.synthesizer isSpeaking]) {
             [self.synthesizer stopSpeakingAtBoundary:AVSpeechBoundaryImmediate];

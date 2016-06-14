@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Sound : NSObject
-
+@property (assign, nonatomic) float speedValue;
 //*****************************************************************************
 #pragma mark -
 #pragma mark ** Singleton object **

@@ -180,6 +180,7 @@
 		D3CCA4981CF2AF9A0022D752 /* GrammarController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CCA4971CF2AF9A0022D752 /* GrammarController.m */; };
 		D3CCA49E1CF2AFB50022D752 /* VocabularyController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CCA49D1CF2AFB50022D752 /* VocabularyController.m */; };
 		D3CCA4AE1CF2AFD10022D752 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3CCA4AD1CF2AFD10022D752 /* AppDelegate.m */; };
+		D3F0D7FF1D0F94FC0097AD7D /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F0D7FE1D0F94FC0097AD7D /* SettingController.m */; };
 		D3F6657B1CF2E2F0001A7F71 /* listcontent.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3F6657A1CF2E2F0001A7F71 /* listcontent.plist */; };
 		D3FA25691CF6EE1300CD24BF /* Sound.m in Sources */ = {isa = PBXBuildFile; fileRef = D3FA25681CF6EE1300CD24BF /* Sound.m */; };
 		D3FA256B1CF6EF2500CD24BF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3FA256A1CF6EF2500CD24BF /* AudioToolbox.framework */; };
@@ -457,6 +458,8 @@
 		D3CCA4AB1CF2AFC30022D752 /* StoryBoardID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoryBoardID.h; path = Config/StoryBoardID.h; sourceTree = "<group>"; };
 		D3CCA4AC1CF2AFD10022D752 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = AppDelegate/AppDelegate.h; sourceTree = "<group>"; };
 		D3CCA4AD1CF2AFD10022D752 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = AppDelegate/AppDelegate.m; sourceTree = "<group>"; };
+		D3F0D7FD1D0F94FC0097AD7D /* SettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingController.h; sourceTree = "<group>"; };
+		D3F0D7FE1D0F94FC0097AD7D /* SettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingController.m; sourceTree = "<group>"; };
 		D3F6657A1CF2E2F0001A7F71 /* listcontent.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = listcontent.plist; path = Resource/listcontent.plist; sourceTree = "<group>"; };
 		D3FA25671CF6EE1300CD24BF /* Sound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sound.h; path = Modal/Sound.h; sourceTree = "<group>"; };
 		D3FA25681CF6EE1300CD24BF /* Sound.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sound.m; path = Modal/Sound.m; sourceTree = "<group>"; };
@@ -795,6 +798,7 @@
 		D3CCA3F81CF2ADC80022D752 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D3F0D7FC1D0F94ED0097AD7D /* Setting */,
 				D33731A01D0E44DB002AD32D /* NavCustomController */,
 				99FAC8801D0D039300628570 /* NavigationControllerCustom */,
 				99FAC87A1D0CF8AD00628570 /* TabBarCustomController */,
@@ -926,6 +930,15 @@
 				D3CCA48E1CF2AF7D0022D752 /* MBProgressHUD.m */,
 			);
 			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		D3F0D7FC1D0F94ED0097AD7D /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				D3F0D7FD1D0F94FC0097AD7D /* SettingController.h */,
+				D3F0D7FE1D0F94FC0097AD7D /* SettingController.m */,
+			);
+			name = Setting;
 			sourceTree = "<group>";
 		};
 		D3F665751CF2B24C001A7F71 /* ThirdLibrary */ = {
@@ -1352,6 +1365,7 @@
 				D3FD93061CF56E040039FB14 /* DetailGrammarController.m in Sources */,
 				D3CCA47B1CF2AF5F0022D752 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				D353913D1D0146B200025CB3 /* SNLoading.m in Sources */,
+				D3F0D7FF1D0F94FC0097AD7D /* SettingController.m in Sources */,
 				D3CCA4841CF2AF5F0022D752 /* UIButton+AFNetworking.m in Sources */,
 				D3CCA47F1CF2AF5F0022D752 /* AFURLRequestSerialization.m in Sources */,
 				D3CCA47C1CF2AF5F0022D752 /* AFNetworkReachabilityManager.m in Sources */,

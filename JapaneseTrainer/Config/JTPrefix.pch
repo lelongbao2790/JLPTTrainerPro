@@ -41,5 +41,5 @@
 #import "TabBarCustomController.h"
 #import "HomeController.h"
 #import "NavigationCustomController.h"
-
+#import "SettingController.h"
 #endif /* JTPrefix_pch */
